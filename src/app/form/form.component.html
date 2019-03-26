@@ -1,0 +1,57 @@
+<div class="container-fluid">
+  <mat-card>
+    <div style="background-color: midnightblue;padding:10px">
+      <h1 style="font-family: cursive;color:white;text-align:center">BROKER</h1>
+    </div>
+    <br>
+    
+    <div class="container">
+      <div [hidden]=" error != 'success' " class="alert alert-success">{{error}}</div>
+      <div [hidden]=" error == 'success' || !error " class="alert alert-danger">{{error}}</div>
+      <form>
+        <div class="row">
+          <div class="col lg-6">
+            Name <input type="text"  name='name' class="form-control" #name  >
+          </div>
+          <div class="col lg-6">
+            Email <input type="email"  name='email'class="form-control" #email>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col lg-6">
+            City <input type="text"  name='city'class="form-control" #city>
+          </div>
+          <div class="col lg-6">
+            State <select name="state" class='form-control' #state>
+              <option value='none'>Select</option>
+              <option value="New Delhi">New Delhi</option>
+              <option value="New Delhi">New Delhi</option>
+              <option value="New Delhi">New Delhi</option>                    
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col lg-6">
+            Address Line1 <input type="text" name='addl1'class="form-control" #addl1>
+          </div>
+          <div class="col lg-6">
+            Address  Line2 <input type="text"  name='addl2' class="form-control" #addl2>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            Commission <input type="text"  name='commission' class="form-control" #commission>
+          </div>
+        </div><br>
+          <div class="row">
+            <div class="col lg-6">
+             <input type="submit" class="btn btn-primary btn-block" name='submit' value='Save' (click)="onSubmit(name.value,email.value,city.value,state.value,addl1.value,addl2.value,commission.value,$event)">
+            </div>
+            <div class="col lg-6">
+              <input type="reset" class="btn btn-danger btn-block" (click)="reset()" name='cancel' value='Cancel'>
+            </div>
+          </div>
+      </form>
+    </div>
+  </mat-card>
+</div>
