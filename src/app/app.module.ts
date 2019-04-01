@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './table/table.component';
 import { FormComponent } from './form/form.component';
 import {MatCardModule} from "@angular/material";
+import {FormsModule} from "@angular/forms";
 import {DataService} from "./data.service";
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {HttpClientModule} from '@angular/common/http';
+import {ChartsModule} from 'ng2-charts';
+import { ChartComponent } from './chart/chart.component';
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
-    FormComponent
+    FormComponent,
+    ChartComponent
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,BrowserAnimationsModule,MatCardModule,MatPaginatorModule
+    BrowserModule,HttpClientModule,ChartsModule,
+    AppRoutingModule,BrowserAnimationsModule,MatCardModule,MatPaginatorModule,FormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]
