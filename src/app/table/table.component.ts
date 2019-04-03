@@ -1,6 +1,7 @@
   import { Component, OnInit,Output } from '@angular/core';
   import {DataService} from "../data.service"
   import { EventEmitter } from '@angular/core';
+  import {Broker, BrokerWithId} from '../models/Broker';
   @Component({
     selector: 'app-table',
     templateUrl: './table.component.html',
@@ -8,9 +9,9 @@
   })
   export class TableComponent implements OnInit {
 
-    @Output() editInfo = new EventEmitter<object>();
-    info:object;
-    appData:any;
+    @Output() editInfo = new EventEmitter<BrokerWithId>();
+    info:BrokerWithId;
+    appData:BrokerWithId[];
     transfer:Object;
     constructor(private data:DataService) {
       

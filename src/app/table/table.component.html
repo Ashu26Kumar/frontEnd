@@ -31,7 +31,7 @@
   
                 <li class="list-group-item"> <b>Address Line 2</b>:&nbsp; {{showData?.address2}}</li>
   
-                <li class="list-group-item"><b>Commission</b>:&nbsp;&nbsp;&nbsp;{{showData?.commission}}</li>
+                <li class="list-group-item"><b>Commission</b>:&nbsp;&nbsp;&nbsp;{{showData?.commission|currency}}</li>
               </div>
             </div>
       
@@ -59,10 +59,17 @@
         </div>
       </div>
       <br><br> -->
+      <!-- <ng-template #emoji>
+        <br><br><br>
+        <div class="text-center">
+            <div class="loader"></div>
+          </div>
+      </ng-template> -->
+      
     <div class="table-responsive">
-      <table class="table table-striped table-bordered">
+      <table class="table table-striped table-bordered" >
         <thead>
-          <th>Id</th>
+          <!-- <th>Id</th> -->
           <th>Name</th>
           <th>City</th>
           <th>Email</th>
@@ -73,19 +80,21 @@
           <th>Status</th>
           <th>Action</th>
         </thead>
-        <tbody>
+
+        <tbody >
             <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
                 Open modal
               </button> -->
-          <tr *ngFor='let i of appData|slice: lowValue:highValue'>
-            <td>{{i.id}}</td>
+              
+          <tr  *ngFor='let i of appData|slice: lowValue:highValue'>
+            <!-- <td>{{i.id}}</td> -->
             <td>{{i.name}}</td>
             <TD>{{i.city}}</TD>
             <td>{{i.email}}</td>
             <td>{{i.state}}</td>
             <td>{{i.address1}}</td>
             <td>{{i.address2}}</td>
-            <td>{{i.commission}}</td>
+            <td>{{i.commission|currency}}</td>
             <td>{{i.isActive==1? 'Active':'Inactive'}}</td>
             <td >
              <div class='btn-group'>

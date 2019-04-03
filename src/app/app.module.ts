@@ -11,17 +11,18 @@ import {DataService} from "./data.service";
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {HttpClientModule} from '@angular/common/http';
 import {ChartsModule} from 'ng2-charts';
-import { ChartComponent } from './chart/chart.component';
+import {MatIconModule} from '@angular/material/icon';
+//import { ChartComponent } from './chart/chart.component';
 @NgModule({
   declarations: [
     AppComponent,
     TableComponent,
     FormComponent,
-    ChartComponent
+    //ChartComponent
   ],
   imports: [
     BrowserModule,HttpClientModule,ChartsModule,
-    AppRoutingModule,BrowserAnimationsModule,MatCardModule,MatPaginatorModule,FormsModule
+    AppRoutingModule,BrowserAnimationsModule,MatCardModule,MatPaginatorModule,MatIconModule,FormsModule
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

@@ -13,18 +13,18 @@
           <form>
             <div class="row">
               <div class="col lg-6">
-                Name <input type="text" name='name' class="form-control" [(ngModel)]="name"  >
+                Name <input type="text" name='appData.name' class="form-control" [(ngModel)]="appData.name"  >
               </div>
               <div class="col lg-6">
-                Email <input type="email" name="email" class="form-control" [(ngModel)]="email">
+                Email <input type="email" name="appData.email" class="form-control" [(ngModel)]="appData.email">
               </div>
             </div>
             <div class="row">
               <div class="col lg-6">
-                City <input type="text"  name='city' class="form-control" [(ngModel)]="city">
+                City <input type="text"  name='appData.city' class="form-control" [(ngModel)]="appData.city">
               </div>
               <div class="col lg-6">
-                State <select name="state" class='form-control' [(ngModel)]="state">
+                State <select name="appData.state" class='form-control' [(ngModel)]="appData.state">
                   <option value='none'>Select</option>
                   <option *ngFor="let i of stateName" value={{i.stateName}}>{{i.stateName}}</option>                  
                 </select>
@@ -32,16 +32,17 @@
             </div>
             <div class="row">
               <div class="col lg-6">
-                Address Line1 <input type="text" name='addl1'  class="form-control" [(ngModel)]="addl1">
+                Address Line1 <input type="text" name='appData.address1'  class="form-control" [(ngModel)]="appData.address1">
               </div>
               <div class="col lg-6">
-                Address  Line2 <input type="text"  name='addl2'  class="form-control" [(ngModel)]="addl2">
+                Address  Line2 <input type="text"  name='appData.address2'  class="form-control" [(ngModel)]="appData.address2"  >
               </div>
             </div>
             <div class="row">
               <div class="col-lg-12">
-                Commission <input type="text"  name='commission' class="form-control" [(ngModel)]="commission">
+                Commission <input type="number"  name='appData.commission' class="form-control" [(ngModel)]="appData.commission">
               </div>
+              <!-- <input type="hidden" name="appData.isActive" [(ngModel)]='appData.isActive' value='1'> -->
             </div><br>
             <!-- edit
             <input type="hidden" name="editId" > -->
@@ -51,7 +52,7 @@
                  <input *ngIf="length!=0" type="submit" class="btn btn-warning btn-block" name='submit' value="Update" (click)="onUpdate($event)">
                 </div>
                 <div class="col-lg-6">
-                  <input type="reset" class="btn btn-danger btn-block" (click)="reset($event)" name='cancel' value='Cancel'>
+                  <input type="submit" class="btn btn-danger btn-block" (click)="reset($event)" name='cancel' value='Cancel'>
                 </div>
               </div>
           </form>
